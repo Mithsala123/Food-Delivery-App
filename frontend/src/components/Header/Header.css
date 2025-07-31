@@ -6,6 +6,7 @@
     position: relative;
     background: url('/new.jpg') no-repeat center center;
     background-size: cover;
+    padding:0 3vw;
 }
 
 .header-contend{
