@@ -9,12 +9,12 @@ const Header = () => {
       style={{
         backgroundImage: `url(${newImg})`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
+        backgroundSize: 'cover',// containt don't use ,use cover
         backgroundPosition: 'center'
       }}
     >
       {/* Remove this div if you only want the image */}
-      <div className="heager-contend">
+      <div className="header-contend">
         <h2>Are You Hungry?</h2>
         <h1>Don't Wait</h1>
         <h2>Let's start to order food now</h2>

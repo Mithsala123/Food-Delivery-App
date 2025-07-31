@@ -8,7 +8,7 @@
     background-size: cover;
 }
 
-.heager-contend{
+.header-contend{
     position:absolute ;
     display: flex;
     flex-direction: column;
@@ -17,4 +17,15 @@
     max-width: 50%;
     bottom: 10%;
     left: 6vw;
+}
+
+.header-contend h1{
+    font-weight: 500;
+    font-size: max(4.5vw, 30px);
+    color:black;
+    line-height: 0.1;
+}
+
+.header-contend h2{
+    color: black;
 }
