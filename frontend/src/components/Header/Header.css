@@ -17,6 +17,7 @@
     max-width: 50%;
     bottom: 10%;
     left: 6vw;
+    animation: fadeIn 3s;
 }
 
 .header-contend h1{
@@ -28,4 +29,19 @@
 
 .header-contend h2{
     color: black;
+}
+.header-contend p{
+    color: black;
+    font-size: 1vw;
+    
+}
+
+.header-contend button{
+    border: none;
+    background-color: #747474;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: 1vw 13px;
+    border-radius: 50px;
 }
