@@ -9,7 +9,7 @@ import sprite from '../../assets/sprite.jpeg'
 const ExploreMenu = () => {
   return (
     <div className="explore-menu" id="explore-menu">
-      <h1> explore our menu</h1>
+      <h1>Explore Our Menu</h1>
       <p className="explore-menu-text">Choose your favorite foods.</p>
       <div className="explore-menu-items">
         <div className="explore-menu-item">
@@ -25,7 +25,7 @@ const ExploreMenu = () => {
           <h2>Orange</h2>
         </div>
         <div className="explore-menu-item">
-          <img src={ramen2} alt="Ramen 2" />
+          <img src={ramen02} alt="Ramen 2" />
           <h2>Ramen 2</h2>
         </div>
         <div className="explore-menu-item">
