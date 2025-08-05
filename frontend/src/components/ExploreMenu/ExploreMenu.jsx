@@ -3,7 +3,7 @@ import './ExploreMenu.css'
 import rice from '../../assets/rice.png'
 import ramen from '../../assets/ramen.jpg'
 import orange from '../../assets/orange.jpg'
-import ramen2 from '../../assets/ramen2.jpg'
+import ramen02 from '../../assets/ramen02.jpg'
 import sprite from '../../assets/sprite.jpeg'
 
 const ExploreMenu = () => {
