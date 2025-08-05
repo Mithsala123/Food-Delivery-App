@@ -1,5 +1,6 @@
 import React from 'react'
 import './ExploreMenu.css'
+
 import rice from '../../assets/rice.png'
 import ramen from '../../assets/ramen.jpg'
 import orange from '../../assets/orange.jpg'
