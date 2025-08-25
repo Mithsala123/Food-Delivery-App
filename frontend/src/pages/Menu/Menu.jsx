@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Cart = () => {
+const Menu = () => {
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1>Shopping Cart</h1>
-      <p>Your cart is empty</p>
+      <h1>Menu Page</h1>
+      <p>Full menu coming soon...</p>
     </div>
   )
 }
 
-export default Cart
+export default Menu

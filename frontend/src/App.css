@@ -1,16 +1,26 @@
-*{
-  padding: 0;
+/* Global reset */
+* {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-body{
-  min-height: 100vh;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
-a{
-  text-decoration: none;
-  color: inherit;
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
-.app{
-  width: 80%;
-  margin: 0 auto;
+
+.app {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 70px; /* Account for fixed navbar */
 }

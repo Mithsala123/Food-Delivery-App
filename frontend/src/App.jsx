@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from './components/navbar/navbar.jsx'
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/home/Home.jsx'
-import Cart from './pages/Cart/Cart.jsx'
-import PlaceOrder from './pages/PlaceOrder/PlaceOrder.jsx'
-import Menu from './pages/Menu/Menu.jsx'
+import Navbar from './components/navbar/navbar' // Change this line - use lowercase 'navbar'
+import Home from './pages/home/Home'
+import Cart from './pages/Cart/Cart'
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
+import Menu from './pages/Menu/Menu'
 
 const App = () => {
   return (

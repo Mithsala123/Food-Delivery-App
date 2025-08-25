@@ -1,30 +1,39 @@
 import React, { useState } from 'react'
-import './Navbar.css'
-import logo from '../../assets/logo.jpeg'
-import search from '../../assets/search.png'
-import cart from '../../assets/cart.png'
+import { Link } from 'react-router-dom'
+import './navbar.css' // Changed to lowercase to match your CSS file name
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
 
   return (
     <div className='navbar'>
-      <img src={logo} alt="Logo" className='logo' />
+      {/* Use text logo instead of missing image */}
+      <div className='logo'>
+        Grand Minato
+      </div>
       
       <ul className='navbar-bar'>
-        <li className={menu==="home" ? "active" : ""} onClick={() => setMenu("home")}>Home</li>
-        <li className={menu==="menu" ? "active" : ""} onClick={() => setMenu("menu")}>Menu</li>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <li className={menu==="home" ? "active" : ""} onClick={() => setMenu("home")}>Home</li>
+        </Link>
+        <Link to="/menu" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <li className={menu==="menu" ? "active" : ""} onClick={() => setMenu("menu")}>Menu</li>
+        </Link>
         <li className={menu==="mobile-app" ? "active" : ""} onClick={() => setMenu("mobile-app")}>Mobile app</li>
         <li className={menu==="contact" ? "active" : ""} onClick={() => setMenu("contact")}>Contact</li>
       </ul>
+      
       <div className='navbar-right'>
-        <img src={search} alt="Search" className='search' />
-        <div className='navbar-cart'>
-          <img src={cart} alt="Cart" className='cart' />
-          <div className='dot'> </div>
-        </div>
+        {/* Use emoji icons instead of missing images */}
+        <span style={{ fontSize: '1.2rem', cursor: 'pointer' }}>🔍</span>
+        <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className='navbar-cart'>
+            <span style={{ fontSize: '1.2rem', cursor: 'pointer' }}>🛒</span>
+            <div className='dot'></div>
+          </div>
+        </Link>
         <div>
-          <button>sign in</button>
+          <button>Sign In</button>
         </div>
       </div>
     </div>
