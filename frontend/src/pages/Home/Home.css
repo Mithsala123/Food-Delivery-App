@@ -511,3 +511,258 @@
   opacity: 1;
   transform: translateY(0);
 }
+/* Add to your existing Home.css file */
+
+/* Welcome Section Grid */
+.welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-text-section {
+  padding-right: 2rem;
+}
+
+.welcome-image-section {
+  position: relative;
+}
+
+.welcome-image-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.welcome-image-container:hover {
+  transform: translateY(-10px);
+}
+
+.welcome-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.welcome-image-container:hover .welcome-image {
+  transform: scale(1.05);
+}
+
+.welcome-image-fallback {
+  display: none;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, #8b1538 0%, #dc2626 100%);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.restaurant-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 2rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.welcome-image-container:hover .welcome-image-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.overlay-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-content p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design for Welcome Section */
+@media (max-width: 768px) {
+  .welcome-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .welcome-text-section {
+    padding-right: 0;
+    text-align: center;
+  }
+  
+  .welcome-image {
+    height: 300px;
+  }
+}
+
+/* Hero Section - Updated for background images */
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.8s ease-in-out;
+  background-attachment: fixed; /* Parallax effect */
+}
+
+/* Fallback background in case images don't load */
+.hero-fallback-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8b1538 0%, #dc2626 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+  z-index: 2;
+  position: relative;
+   /* Subtle background for better text readability */
+  border-radius: 20px;
+  padding: 3rem;
+  /* Modern glass effect */
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Stronger text shadow for better visibility */
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.primary-btn {
+  background-color: #d97d0a;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #f59e0b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.secondary-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #8b1538;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.slider-indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.indicator:hover {
+  transform: scale(1.2);
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

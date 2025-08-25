@@ -1,30 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css'; // Import CSS file
+import homeImage from '../../assets/homeImg.jpg'; // Import the hero image
 
-const Home = () => { // Changed from GrandMinatoHomepage to Home
+const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState({});
 
-  // Hero slider images (placeholder descriptions)
+  // Hero slider images with background images
   const heroSlides = [
     {
       title: "Authentic Chinese Cuisine",
       subtitle: "Experience the rich flavors of traditional Guangzhou cooking",
-      description: "Elegant restaurant interior with traditional Chinese decor"
+      description: "Elegant restaurant interior with traditional Chinese decor",
+      backgroundImage: homeImage
     },
-    {
-      title: "Fresh Ingredients Daily",
-      subtitle: "Sourced directly from premium suppliers for exceptional taste",
-      description: "Fresh vegetables and premium ingredients preparation"
-    },
-    {
-      title: "Master Chef Excellence",
-      subtitle: "38 years of culinary expertise in every dish we serve",
-      description: "Master chef preparing signature dishes"
-    }
+   
   ];
 
-  // Featured dishes
+  // ... existing featuredDishes array and useEffect hooks remain the same ...
+
   const featuredDishes = [
     { 
       name: "Peking Duck", 
@@ -88,9 +82,7 @@ const Home = () => { // Changed from GrandMinatoHomepage to Home
 
   return (
     <div className="container">
-      {/* Remove Navbar since it's already in App.jsx */}
-
-      {/* Hero Section */}
+      {/* Hero Section with Background Images */}
       <section className="hero" id="home">
         <div className="hero-slider">
           {heroSlides.map((slide, index) => (
@@ -98,9 +90,11 @@ const Home = () => { // Changed from GrandMinatoHomepage to Home
               key={index}
               className="hero-slide"
               style={{
-                opacity: index === currentSlide ? 1 : 0,
-                transform: index === currentSlide ? 'translateX(0)' : 'translateX(100px)'
-              }}
+              backgroundImage: `url(${slide.backgroundImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
             >
               <div className="hero-content">
                 <h1 className="hero-title">{slide.title}</h1>
@@ -114,6 +108,8 @@ const Home = () => { // Changed from GrandMinatoHomepage to Home
                   </button>
                 </div>
               </div>
+              {/* Fallback background for slow loading */}
+              <div className="hero-fallback-bg"></div>
             </div>
           ))}
         </div>
@@ -132,34 +128,60 @@ const Home = () => { // Changed from GrandMinatoHomepage to Home
         </div>
       </section>
 
-      {/* Welcome Section */}
+      {/* Rest of your existing sections remain the same */}
+      {/* Welcome Section - Updated with image */}
       <section 
         className={`welcome-section ${isVisible['section-welcome'] ? 'visible' : ''}`}
         id="section-welcome"
       >
         <div className="welcome-content">
-          <h2 className="section-title">Welcome to Grand Minato</h2>
-          <p className="welcome-text">
-            For over 38 years, Grand Minato has been serving authentic Chinese cuisine that brings families and friends together. 
-            Our master chefs use traditional techniques and the finest ingredients to create unforgettable dining experiences.
-          </p>
-          <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-number">38+</div>
-              <div className="stat-label">Years of Excellence</div>
+          <div className="welcome-grid">
+            <div className="welcome-text-section">
+              <h2 className="section-title">Welcome to Grand Minato</h2>
+              <p className="welcome-text">
+                For over 38 years, Grand Minato has been serving authentic Chinese cuisine that brings families and friends together. 
+                Our master chefs use traditional techniques and the finest ingredients to create unforgettable dining experiences.
+              </p>
+              <div className="stats-grid">
+                <div className="stat-item">
+                  <div className="stat-number">38+</div>
+                  <div className="stat-label">Years of Excellence</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">150+</div>
+                  <div className="stat-label">Signature Dishes</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">50K+</div>
+                  <div className="stat-label">Happy Customers</div>
+                </div>
+              </div>
             </div>
-            <div className="stat-item">
-              <div className="stat-number">150+</div>
-              <div className="stat-label">Signature Dishes</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">50K+</div>
-              <div className="stat-label">Happy Customers</div>
+            <div className="welcome-image-section">
+              <div className="welcome-image-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                  alt="Grand Minato Restaurant Interior"
+                  className="welcome-image"
+                />
+                <div className="welcome-image-fallback">
+                  <span className="restaurant-icon">🏮</span>
+                  <p>Elegant Restaurant Interior</p>
+                </div>
+                <div className="welcome-image-overlay">
+                  <div className="overlay-content">
+                    <h3>Traditional Atmosphere</h3>
+                    <p>Experience authentic Chinese dining ambiance</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ... rest of your existing sections remain unchanged ... */}
+      
       {/* Featured Menu */}
       <section 
         className={`menu-section ${isVisible['section-menu'] ? 'visible' : ''}`}
@@ -294,9 +316,9 @@ const Home = () => { // Changed from GrandMinatoHomepage to Home
           </div>
           <div>
             <h4>Contact</h4>
-            <p>📞 (555) 123-4567</p>
+            <p>📞 (+94) 77-3224567</p>
             <p>📧 info@grandminato.com</p>
-            <p>📍 123 Dragon Street, Chinatown</p>
+            <p>📍 10 Street,Temple road, Baththaramulla</p>
           </div>
           <div>
             <h4>Hours</h4>
@@ -313,4 +335,4 @@ const Home = () => { // Changed from GrandMinatoHomepage to Home
   );
 };
 
-export default Home; // Changed export name
+export default Home;
